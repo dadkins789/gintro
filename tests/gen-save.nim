@@ -1475,10 +1475,9 @@ proc genPars(info: GICallableInfo; genProxy = false; binfo: GIBaseInfo = nil; ge
     if genProxy and defaultParameters.contains(sym):
       for hhh in defaultParameters[sym].split('|'):
         var h1, h2, h3: string
-        let  s = hhh.split
-
-        if name == s[0] and str == s[1] and s.len > 2:
-           str.add(" = " & s[2] )
+        (h1, h2) = hhh.split
+        #if name == h1 and str == h2:
+        #  str.add(" = " & h3)
 
     #if genProxy and (str == "string" or str == "cstring") and mayBeNil and not sym.contains("_button_new_with_label"):
     #  str.add(" = \"\"")
